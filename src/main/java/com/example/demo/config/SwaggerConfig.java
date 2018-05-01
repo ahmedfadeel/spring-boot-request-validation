@@ -18,8 +18,7 @@ public class SwaggerConfig {
 	private static final String GROUP_NAME = "TestApi";
 	
     @Bean
-    public Docket productApi() { 	
-	    
+    public Docket productApi() {	    
         return new Docket(DocumentationType.SWAGGER_2)  
         		.groupName(GROUP_NAME)
                 .select()

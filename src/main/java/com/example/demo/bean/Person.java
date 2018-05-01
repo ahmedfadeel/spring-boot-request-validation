@@ -10,7 +10,7 @@ public class Person {
 	private String firstname;
 	@NotNull @Size(min = 1, max = 10)
 	private String lastname;
-	@NotNull @InRange(min = 1, max = 10) 
+	@NotNull @InRange(min = 1, max = 10)
 	private int age;
 	public String getFirstname() {
 		return firstname;

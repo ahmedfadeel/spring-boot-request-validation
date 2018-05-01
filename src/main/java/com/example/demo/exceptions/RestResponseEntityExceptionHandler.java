@@ -1,10 +1,8 @@
 package com.example.demo.exceptions;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -17,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import com.example.demo.res.ErrorResource;
 import com.example.demo.res.ErrorResponse;
 import com.example.demo.res.FieldErrorResource;
 
@@ -66,7 +63,9 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
 			fieldErrorResources.add(fieldErrorResource);
 		}
 
-		ErrorResource error = new ErrorResource("InvalidRequest", ire.getMessage());
+		ErrorResponse error = new ErrorResponse();
+		error.setCode("InvalidRequest");
+		error.setMessage(ire.getMessage()); 
 		error.setFieldErrors(fieldErrorResources);
 		System.out.println("handleConflict error = " + error);
 		HttpHeaders headers = new HttpHeaders();
