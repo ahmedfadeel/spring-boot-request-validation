@@ -22,7 +22,7 @@ public class TestController {
 		if(bindingResult.getErrorCount() > 0 ) {
 			throw new InvalidRequestException("Error", bindingResult);	
 		}
-		
+		log.debug("test");
 		return "test";
 	}
 	
