@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import javax.validation.Valid;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import com.example.demo.bean.TestBean;
 import com.example.demo.exceptions.InvalidRequestException;
 
 @RestController
+@Slf4j
 public class TestController {
 
 	@RequestMapping(value = "/test", method = RequestMethod.POST)
